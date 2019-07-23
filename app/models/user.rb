@@ -2,5 +2,5 @@
 
 class User < ApplicationRecord
   include Authentication
-  has_many :examples, :restaurants
+  has_many :restaurants
 end

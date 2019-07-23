@@ -54,5 +54,5 @@ class RestaurantsController < ApplicationController
                                        :description,
                                        :cost,
                                        :good_for_groups)
-    end
+  end
 end
