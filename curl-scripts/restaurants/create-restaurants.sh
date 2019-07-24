@@ -6,10 +6,10 @@ curl "http://localhost:4741/restaurants" \
   --header "Content-Type: application/json" \
   --data '{
     "restaurant": {
-      "name": "'"${TEXT}"'",
+      "name": "'"${NAME}"'",
       "location": "'"${LOCATION}"'",
       "description": "'"${DESCRIPTION}"'",
-      "cost": "'"${TEXT}"'",
+      "cost": "'"${COST}"'",
       "good_for_groups": "'"${FALSE}"'"
     }
   }'
