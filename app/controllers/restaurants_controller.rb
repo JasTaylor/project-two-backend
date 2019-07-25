@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RestaurantsController < OpenReadController
+class RestaurantsController < ProtectedController
   before_action :set_restaurant, only: %i[show update destroy]
 
   # GET /restaurants
