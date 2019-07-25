@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class RestaurantsController < ApplicationController
+class RestaurantsController < OpenReadController
   before_action :set_restaurant, only: %i[show update destroy]
 
   # GET /restaurants
   def index
-    @restaurants = Restaurant.all
+    @restaurants = current_user.restaurants
 
     render json: @restaurants
   end
@@ -17,7 +17,7 @@ class RestaurantsController < ApplicationController
 
   # POST /restaurants
   def create
-    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant = current_user.restaurants.build(restaurant_params)
 
     if @restaurant.save
       render json: @restaurant, status: :created, location: @restaurant
@@ -44,7 +44,7 @@ class RestaurantsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_restaurant
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = current_user.restaurants.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
