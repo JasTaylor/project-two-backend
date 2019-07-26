@@ -5,7 +5,7 @@ class RestaurantsController < ProtectedController
 
   # GET /restaurants
   def index
-    @restaurants = current_user.restaurants
+    @restaurants = current_user.restaurants.all
 
     render json: @restaurants
   end
